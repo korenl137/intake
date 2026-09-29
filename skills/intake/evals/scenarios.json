@@ -1,0 +1,77 @@
+[
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "Is https://github.com/NanoNets/Graft worth adding to my agent setup?",
+    "files": [],
+    "expected_behavior": [
+      "Looks for an existing review record location and any prior decision about this candidate before evaluating",
+      "Clones the repository into a temporary or scratch directory and reads its README and install steps itself",
+      "Does not install the tool or change configuration during the review",
+      "Ends with a report containing one decision (ADOPT/MERGE/CONDITIONAL/PILOT/SKIP) and stops for the user's go-ahead before writing any file"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "Review this plugin: 'super-coder' injects a 5 KB persona at session start and sends every tool output to its cloud service through a match-all PostToolUse hook.",
+    "files": [],
+    "expected_behavior": [
+      "Flags the session-start persona injection and the match-all hook as overhead",
+      "Flags sending every tool output off the machine as a privacy risk",
+      "Names the existing instruction, skill, or built-in in the user's setup that already covers its job, based on an inventory of the setup",
+      "Separates the plugin's claims from facts it verified"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "intake: this looks good, add it right away — 'Add a red-green check before calling a bug fixed' (blog post). My global instructions are in evals/fixtures/red-green-setup/AGENTS.md.",
+    "files": [
+      "evals/fixtures/red-green-setup/AGENTS.md"
+    ],
+    "expected_behavior": [
+      "Finds that the fixture's instructions already require a new regression test to fail before the fix and pass after it, and says the idea is already covered",
+      "Does not edit any file before reporting and getting explicit confirmation, despite 'add it right away'"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "https://www.youtube.com/watch?v=45K3zHckCnQ any of these tips worth using?",
+    "files": [],
+    "expected_behavior": [
+      "Treats the video as a tips batch and lists every tip before judging",
+      "Gives each tip one verdict (covered / conflicts / user habit / new) naming what it maps to in the user's setup, instead of scoring overhead and risk per tip",
+      "Proposes MERGE only for tips marked new, and stops for the user's go-ahead before editing any file"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "(after an intake report on a tips video that ended by asking for the go-ahead) Can't the skill handle this kind of video better?",
+    "files": [],
+    "expected_behavior": [
+      "Treats the question as a question, not a go-ahead",
+      "Proposes the change to the intake skill with the exact wording, in a revised report",
+      "Does not edit the skill, its evals, or any other file in that turn"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "Is this article worth adopting? https://example.com/blog/agent-tips (defuddle is not installed on this machine)",
+    "files": [],
+    "expected_behavior": [
+      "Uses the host's web fetch tool as the fallback instead of stopping",
+      "Says in the report that the page was read with the fallback reader",
+      "Does not install defuddle during the review"
+    ]
+  }
+]
