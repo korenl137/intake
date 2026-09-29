@@ -1,2 +1,11 @@
 __pycache__/
 .DS_Store
+
+# Local agent, environment, and runtime files
+.claude/
+.codex/
+.agents/
+.cache/
+.env
+.env.*
+*.log
