@@ -46,8 +46,21 @@
     "files": [],
     "expected_behavior": [
       "Treats the video as a tips batch and lists every tip before judging",
-      "Gives each tip one verdict (covered / conflicts / user habit / new) naming what it maps to in the user's setup, instead of scoring overhead and risk per tip",
-      "Proposes MERGE only for tips marked new, and stops for the user's go-ahead before editing any file"
+      "Gives each tip one verdict (covered-equal / covered-improvable / conflicts / user habit / new) naming what it maps to in the user's setup, instead of scoring overhead and risk per tip",
+      "For a covered tip, reads the existing mechanism in the setup (file, setting, or count) instead of judging by topic overlap",
+      "Proposes MERGE only for tips marked new or covered-improvable, naming the file, the kind of improvement and the setup evidence, and stops for the user's go-ahead before editing any file"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "(tips video, 'a rule that blocks edits to the test files is better than asking the agent not to edit them') My global instructions already say 'do not modify tests to make them pass'. Is the tip worth using?",
+    "files": [],
+    "expected_behavior": [
+      "Does not stop at covered because an instruction on the topic exists; compares the strength of the existing instruction with the tip's blocking rule",
+      "Marks the tip covered-improvable, naming the enforcement level (instruction versus permission rule or hook) as the improvement",
+      "Proposes a MERGE that names the exact file and line to change and says the change stays unmade until the user approves"
     ]
   },
   {

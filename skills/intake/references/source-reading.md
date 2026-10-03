@@ -18,6 +18,16 @@ read the promising candidates in depth.
 For a tips source, assess every practice as **covered** (name the existing
 instruction, skill, or built-in), **conflicts** (name the deliberate rule),
 **user habit** (prompting behavior), or **new** (would change agent behavior).
-Report a Tip | Covered by | Verdict table and propose MERGE only for **new**
-practices. Skip the tool-candidate evaluation and decision steps for individual
-tips.
+
+Covered is not final. Read what the existing mechanism does in the setup (open
+the file, check the setting, count the items) rather than judging by topic
+overlap. Mark it **covered-improvable** when the source shows something the
+mechanism lacks: stronger enforcement (an instruction versus a permission rule,
+hook, or script), measured evidence, a cost or failure argument, or a stated
+reason. Otherwise mark it **covered-equal** and say what was checked.
+
+Report a Tip | Covered by | Verdict table. Propose MERGE for **new** and
+**covered-improvable** practices; for improvable ones name the file and line to
+change, the kind of improvement, and the evidence from the setup. A change that
+cannot be named that precisely stays covered-equal. Skip the tool-candidate
+evaluation and decision steps for individual tips.
