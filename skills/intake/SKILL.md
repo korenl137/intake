@@ -16,6 +16,11 @@ metadata:
 
 # Intake
 
+## Contents
+
+- Reading sources
+- Flow
+
 Decide whether an outside source makes the user's agent setup better, and
 bring in only the part that does. A clearly prompted current model often
 matches a public skill, so a candidate has to add a capability, not just
