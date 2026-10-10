@@ -18,6 +18,7 @@ metadata:
 
 ## Contents
 
+- Tools
 - Reading sources
 - Flow
 
@@ -31,6 +32,13 @@ project instruction files (`AGENTS.md`, `CLAUDE.md`, ...), skill directories,
 plugins, MCP servers, hooks, and any repository that manages them. When
 installed files are links into a managed repository, work in the source, not
 the installed copy.
+
+## Tools
+
+| Need | Required | Recommended | Fallback |
+|---|---|---|---|
+| Read the candidate source | The available shell, file reader or web fetch (any one) | Optional readers in `references/source-reading.md`, such as defuddle for web pages or watch for video | Read with what is available and report each part that could not be read as a limit. If no reader works, say so and do not judge the source from its title. |
+| Map the setup; record the decision | Shell and file read | None | If no record location exists, say so and ask; do not invent one. Record only after the user confirms. |
 
 ## Reading sources
 
