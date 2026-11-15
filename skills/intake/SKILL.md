@@ -9,9 +9,9 @@ description: >
   applies an adoption only after the user confirms. Use when the user asks
   whether something is worth adding to their agent setup. Triggers include
   "intake", "evaluate this for my setup", "is this worth adopting",
-  "이거 검토해줘", "도입할 가치 있어?".
+  "이거 내 에이전트 세팅에 넣을 만해?", "도입할 가치 있어?".
 metadata:
-  version: "1.0"
+  version: "1.1"
 ---
 
 # Intake
