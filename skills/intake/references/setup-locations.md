@@ -13,4 +13,6 @@ file is a link, follow it to the managed source.
 | MCP servers | `~/.claude.json`, `.mcp.json` | `[mcp_servers]` in `~/.codex/config.toml` |
 | Plugins | `claude plugin list` | the host's plugin list |
 
+When `CLAUDE_CONFIG_DIR` is set, that folder replaces `~/.claude` in the Claude Code column.
+
 For another agent, look for its documented equivalents of the same rows.

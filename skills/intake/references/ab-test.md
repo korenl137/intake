@@ -14,7 +14,7 @@ candidate cannot settle, and only after the user agrees to the cost.
   "does a good job"). Write them before running.
 - **Conditions**: candidate **off** (the current setup) and candidate **on**.
   Nothing else differs: same message, same fixtures, same model the user
-  actually runs.
+  actually runs. Record the model each run used.
 
 ## Run
 
