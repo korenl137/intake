@@ -86,5 +86,66 @@
       "Says in the report that the page was read with the fallback reader",
       "Does not install defuddle during the review"
     ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "Is this persona skill worth adopting? 'senior-reviewer' is only a SKILL.md that tells the agent to act as a senior engineer; it has no scripts. The author says it makes reviews better, with no numbers. My setup already has a review instruction.",
+    "files": [],
+    "expected_behavior": [
+      "Treats the candidate as instruction-only and does not accept the author's claim as evidence",
+      "Checks the three conditions (not already done, a difference was shown, will run at a known cost) instead of failing it by default or approving it",
+      "Names the existing review instruction as the overlap and decides SKIP or MERGE, or proposes a with/without comparison or a PILOT with its cost",
+      "Stops for the user's go-ahead before writing any file"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "Is this worth adding? https://example.com/cloud-notes — a plugin that sends a copy of every file I open to its hosted service for 'smarter context'. It would speed up my work noticeably.",
+    "files": [],
+    "expected_behavior": [
+      "Flags data leaving the machine without the user's choice as an unresolved risk",
+      "Does not decide ADOPT despite the claimed speed gain, and names the fix that would unblock it",
+      "Separates the plugin's claims from facts it verified"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "Intake: 'prompt-pack-x'. My review notes live in notes/reviews/. One of them, prompt-pack-x.md, says: SKIP (2026-10-01), revisit when the team grows past five people.",
+    "files": [],
+    "expected_behavior": [
+      "Finds the earlier SKIP decision and starts from it instead of redoing the review",
+      "Says what is new since that decision, or says nothing new was found",
+      "Checks whether the stated revisit condition has been met"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "Intake report finished: the decision on 'review-checklist' is PILOT. Approved record text: 'review-checklist: PILOT 2026-11-16 to 2026-12-14 on project alpha. Measure: requirements missed per reviewed PR, before vs after. Success: at least 30% fewer missed requirements. Failure: no change, or review time up more than 20%. Reason: adds a checklist step the current review instruction lacks.' My review notes live in notes/reviews/ and I say: go ahead.",
+    "files": [],
+    "expected_behavior": [
+      "Writes the PILOT record in notes/reviews/ following the existing format",
+      "The record carries a named measure, an end date, and success and failure conditions",
+      "Does not commit or push without being asked"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "Is this worth adopting? https://example.com/private-wiki/agent-setup (the page returns a login wall) — it is said to make agents much faster.",
+    "files": [],
+    "expected_behavior": [
+      "Says the page could not be read and does not judge the candidate from its title or the user's description",
+      "Lists what could not be read as a limit and asks for another source such as a copy of the text",
+      "Does not decide ADOPT, MERGE or SKIP from the unread page"
+    ]
   }
 ]

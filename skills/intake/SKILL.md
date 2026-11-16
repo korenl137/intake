@@ -11,7 +11,7 @@ description: >
   "intake", "evaluate this for my setup", "is this worth adopting",
   "이거 내 에이전트 세팅에 넣을 만해?", "도입할 가치 있어?".
 metadata:
-  version: "1.1"
+  version: "1.2.0"
 ---
 
 # Intake
@@ -24,8 +24,10 @@ metadata:
 
 Decide whether an outside source makes the user's agent setup better, and
 bring in only the part that does. A clearly prompted current model often
-matches a public skill, so a candidate has to add a capability, not just
-instructions.
+matches a public skill, so a candidate has to make a difference the setup
+does not already give: a capability, or for instructions alone, evidence
+that they change outcomes
+([evaluation-criteria.md](references/evaluation-criteria.md)).
 
 **The setup** is whatever configures the user's agents in scope: global and
 project instruction files (`AGENTS.md`, `CLAUDE.md`, ...), skill directories,
@@ -72,9 +74,11 @@ limits when a source or part of it could not be read.
    covers this" needs that inventory as evidence.
 
 4. **Evaluate** each candidate on:
-   - **Unique capability**: does it let the agent *do* something (a tool,
-     script, data source, real workflow)? Persona prompts, forced-use
-     bundles, and generic process manuals fail this by default.
+   - **Difference it makes**: does it let the agent *do* something (a tool,
+     script, data source, real workflow)? If it is instructions only
+     (persona prompts, forced-use bundles, process manuals), it passes only
+     with the evidence in
+     [evaluation-criteria.md](references/evaluation-criteria.md).
    - **Quality / reliability gain**: evidence, not the author's pitch.
    - **Overhead**: description or session-start tokens, hooks (especially
      match-all matchers or per-prompt injection), runtimes and daemons, paid
@@ -86,6 +90,12 @@ limits when a source or part of it could not be read.
    - **Prerequisites here**: platform support, runtime versions, and whether
      a needed key is already configured (check that it exists; never print
      it).
+
+   A **Risk** finding that is not resolved (data leaving the machine
+   without the user's choice, writes outside the candidate's own folder,
+   a secret handled in the clear) blocks ADOPT however large the gain.
+   Decide SKIP, or MERGE of the safe part, and name the fix that would
+   unblock it.
 
    When the decision hinges on a quality claim that reading cannot settle,
    propose an A/B run per [references/ab-test.md](references/ab-test.md)
@@ -99,7 +109,8 @@ limits when a source or part of it could not be read.
      or doc; do not install the candidate.
    - **CONDITIONAL**: keep on demand for a named task only.
    - **PILOT**: try on one real project for a set period, with a named
-     before/after measure.
+     before/after measure, an end date, and what counts as success or
+     failure.
    - **SKIP**: record why, so it is not reviewed again, and the condition
      under which it would be worth revisiting, if there is one.
    Small differences from a single run are noise; say so instead of deciding
@@ -122,6 +133,9 @@ limits when a source or part of it could not be read.
      language (otherwise the user's language). Copy the numbers and sources
      that justify the decision; temporary files are not kept. With no
      record location, the report is the record; offer once to set one up.
+     A PILOT record carries its end date, measure and success and failure
+     conditions, so a later review can close it; a CONDITIONAL record names
+     the task; a SKIP record carries its revisit condition.
    - Apply by the setup's own documented procedure (its README or
      contribution guide), otherwise by the host's standard install method,
      and update what the change makes stale (an inventory or catalog, setup
