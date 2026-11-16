@@ -26,8 +26,14 @@ mechanism lacks: stronger enforcement (an instruction versus a permission rule,
 hook, or script), measured evidence, a cost or failure argument, or a stated
 reason. Otherwise mark it **covered-equal** and say what was checked.
 
-Report a Tip | Covered by | Verdict table. Propose MERGE for **new** and
+Report a Tip | Covered by | Evidence | Verdict table, where Evidence is
+**verified**, **claimed** (the speaker's word, a number without a method) or
+**none**. Propose MERGE for **new** and
 **covered-improvable** practices; for improvable ones name the file and line to
 change, the kind of improvement, and the evidence from the setup. A change that
-cannot be named that precisely stays covered-equal. Skip the tool-candidate
-evaluation and decision steps for individual tips.
+cannot be named that precisely stays covered-equal. A MERGE for a tip whose
+evidence is only claimed says so. A tip merged into an always-loaded file
+(global instructions, hooks, session-start text) needs the evidence that
+[evaluation-criteria.md](evaluation-criteria.md) asks for always-loaded
+candidates, or becomes a PILOT or CONDITIONAL instead. Skip the other
+tool-candidate evaluation and decision steps for individual tips.

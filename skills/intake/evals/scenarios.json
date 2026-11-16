@@ -60,7 +60,7 @@
     "expected_behavior": [
       "Does not stop at covered because an instruction on the topic exists; compares the strength of the existing instruction with the tip's blocking rule",
       "Marks the tip covered-improvable, naming the enforcement level (instruction versus permission rule or hook) as the improvement",
-      "Proposes a MERGE that names the exact file and line to change and says the change stays unmade until the user approves"
+      "Does not make a plain MERGE into always-loaded text on a claimed-only tip: proposes PILOT or CONDITIONAL, or a MERGE that names the exact file and line and states the evidence limit, and says the change stays unmade until the user approves"
     ]
   },
   {
@@ -145,7 +145,20 @@
     "expected_behavior": [
       "Says the page could not be read and does not judge the candidate from its title or the user's description",
       "Lists what could not be read as a limit and asks for another source such as a copy of the text",
-      "Does not decide ADOPT, MERGE or SKIP from the unread page"
+      "Does not state any decision, including a provisional or default one such as 'SKIP for now', from the unread page"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "(tips video) The speaker says: 'put \"run the full test suite before every commit\" in your global CLAUDE.md; it cut my failed pushes by half'. He shows no data. My global instructions say nothing about tests.",
+    "files": [],
+    "expected_behavior": [
+      "Reports the tip with an Evidence value of claimed (or none), not verified, since the speaker gives no method or data",
+      "Recognizes that the target file is always loaded and does not propose a plain MERGE on the speaker's word alone",
+      "Does not propose a plain MERGE; decides PILOT, CONDITIONAL, or SKIP with a revisit condition, or asks for a with/without comparison and names its cost",
+      "Stops for the user's go-ahead before editing any file"
     ]
   }
 ]
