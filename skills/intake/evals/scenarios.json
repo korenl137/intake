@@ -22,7 +22,8 @@
       "Flags the session-start persona injection and the match-all hook as overhead",
       "Flags sending every tool output off the machine as a privacy risk",
       "Names the existing instruction, skill, or built-in in the user's setup that already covers its job, based on an inventory of the setup",
-      "Separates the plugin's claims from facts it verified"
+      "Separates the plugin's claims from facts it verified",
+      "Gives a decision (SKIP expected, because of the blocking risk) and says it rests on the user's description, since no source was given"
     ]
   },
   {
@@ -121,7 +122,8 @@
     "expected_behavior": [
       "Finds the earlier SKIP decision and starts from it instead of redoing the review",
       "Says what is new since that decision, or says nothing new was found",
-      "Checks whether the stated revisit condition has been met"
+      "Checks whether the stated revisit condition has been met",
+      "Says the earlier SKIP stands because the request brings nothing new, instead of asking for a source before saying anything"
     ]
   },
   {
