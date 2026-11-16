@@ -11,7 +11,7 @@ description: >
   "intake", "evaluate this for my setup", "is this worth adopting",
   "이거 내 에이전트 세팅에 넣을 만해?", "도입할 가치 있어?".
 metadata:
-  version: "1.2"
+  version: "1.2.0"
 ---
 
 # Intake
