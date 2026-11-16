@@ -11,7 +11,7 @@ description: >
   "intake", "evaluate this for my setup", "is this worth adopting",
   "이거 내 에이전트 세팅에 넣을 만해?", "도입할 가치 있어?".
 metadata:
-  version: "1.3.0"
+  version: "1.3.1"
 ---
 
 # Intake
@@ -60,7 +60,9 @@ limits when a source or part of it could not be read.
    to install or run anything. If the source, or the part the decision
    depends on, cannot be read (a login wall, a missing page), give no
    decision, not even a provisional or default one; report what was tried
-   and ask for the text, a copy or another link.
+   and ask for the text, a copy or another link. This holds per candidate:
+   the others in a roundup are still decided, and an earlier decision found
+   in step 2 is background for the unread one, not its decision.
 
 2. **Check prior decisions.** Find where this setup keeps review records:
    the user's request, their global or project instructions, or an existing
@@ -120,8 +122,8 @@ limits when a source or part of it could not be read.
    on them.
 
 6. **Report and stop.** Give the source, checked facts and unverified claims,
-   overlap with the setup, one decision per candidate, and the concrete files
-   or installations proposed. Name any open question or test cost. Nothing is
+   overlap with the setup, one decision per candidate (none for a candidate
+   step 1 could not read), and the concrete files or installations proposed. Name any open question or test cost. Nothing is
    written (review record, the target skill or instruction, configuration,
    installs) until the user approves the named items. A go-ahead is explicit
    ("go ahead", "apply 1 only"). A follow-up question, a comment, or "bring

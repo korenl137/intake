@@ -55,12 +55,12 @@
     "skills": [
       "intake"
     ],
-    "query": "(tips video, 'a rule that blocks edits to the test files is better than asking the agent not to edit them') My global instructions already say 'do not modify tests to make them pass'. Is the tip worth using?",
+    "query": "(tips video, 'a rule that blocks edits to the test files is better than asking the agent not to edit them') He gives no data and says to put the rule in your global settings. My global instructions already say 'do not modify tests to make them pass'. Is the tip worth using?",
     "files": [],
     "expected_behavior": [
       "Does not stop at covered because an instruction on the topic exists; compares the strength of the existing instruction with the tip's blocking rule",
       "Marks the tip covered-improvable, naming the enforcement level (instruction versus permission rule or hook) as the improvement",
-      "Does not make a plain MERGE into always-loaded text on a claimed-only tip: proposes PILOT or CONDITIONAL, or a MERGE that names the exact file and line and states the evidence limit, and says the change stays unmade until the user approves"
+      "Does not propose a MERGE into always-loaded text on the speaker's word alone: proposes PILOT or CONDITIONAL, or asks for a with/without comparison and names its cost, and says the change stays unmade until the user approves"
     ]
   },
   {
@@ -159,6 +159,18 @@
       "Recognizes that the target file is always loaded and does not propose a plain MERGE on the speaker's word alone",
       "Does not propose a plain MERGE; decides PILOT, CONDITIONAL, or SKIP with a revisit condition, or asks for a with/without comparison and names its cost",
       "Stops for the user's go-ahead before editing any file"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "Intake these two for my setup: (1) https://example.com/private-wiki/agent-setup (the page returns a login wall) and (2) 'prompt-pack-x'. My review notes live in notes/reviews/ and prompt-pack-x.md there says: SKIP (2026-10-01), revisit when the team grows past five people. prompt-pack-x is only this pasted SKILL.md, which has no scripts: 'Act as a senior engineer and review carefully.'",
+    "files": [],
+    "expected_behavior": [
+      "Gives no decision, not even a provisional one, for the unreadable wiki page, and asks for its text or another link",
+      "Still decides prompt-pack-x on its own, starting from the earlier SKIP and checking the revisit condition",
+      "Does not treat the earlier decision as the decision for the unread candidate"
     ]
   }
 ]
