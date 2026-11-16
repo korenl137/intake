@@ -128,7 +128,7 @@
     "skills": [
       "intake"
     ],
-    "query": "Intake report finished: the decision on 'review-checklist' is PILOT. Please record it. My review notes live in notes/reviews/ and I say: go ahead.",
+    "query": "Intake report finished: the decision on 'review-checklist' is PILOT. Approved record text: 'review-checklist: PILOT 2026-11-16 to 2026-12-14 on project alpha. Measure: requirements missed per reviewed PR, before vs after. Success: at least 30% fewer missed requirements. Failure: no change, or review time up more than 20%. Reason: adds a checklist step the current review instruction lacks.' My review notes live in notes/reviews/ and I say: go ahead.",
     "files": [],
     "expected_behavior": [
       "Writes the PILOT record in notes/reviews/ following the existing format",
