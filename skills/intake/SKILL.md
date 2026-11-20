@@ -8,10 +8,9 @@ description: >
   decides ADOPT / MERGE / CONDITIONAL / PILOT / SKIP. Records the decision and
   applies an adoption only after the user confirms. Use when the user asks
   whether something is worth adding to their agent setup. Triggers include
-  "intake", "evaluate this for my setup", "is this worth adopting",
-  "이거 내 에이전트 세팅에 넣을 만해?", "도입할 가치 있어?".
+  "intake", "evaluate this for my setup", "is this worth adopting".
 metadata:
-  version: "1.3.2"
+  version: "1.3.3"
 ---
 
 # Intake
