@@ -174,5 +174,17 @@
       "Still decides prompt-pack-x on its own, starting from the earlier SKIP and checking the revisit condition",
       "Does not treat the earlier decision as the decision for the unread candidate"
     ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "Intake: a blog post says a review skill should check the PR description against the diff, not only the code. My setup has a 'pr-review' skill that I installed from someone else's GitHub repository and update with git pull; I don't maintain it.",
+    "files": [],
+    "expected_behavior": [
+      "Notes that the existing pr-review skill is maintained by someone else and the user only installs its releases",
+      "If it proposes a MERGE, weighs how the change would reach that skill (for example a layer in the user's own instructions, a proposal to its maintainer, or a local edit and what the next update would do to it) and says why it recommends one",
+      "Does not edit the installed skill, and stops for the user's go-ahead before writing or sending anything"
+    ]
   }
 ]

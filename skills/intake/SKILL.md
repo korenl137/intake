@@ -82,7 +82,10 @@ limits when a source or part of it could not be read.
    [references/setup-locations.md](references/setup-locations.md) lists
    the usual places), then name the existing instruction, skill, plugin, or built-in that
    covers the same job, and what the candidate adds beyond it. "Nothing
-   covers this" needs that inventory as evidence.
+   covers this" needs that inventory as evidence. Note who maintains what
+   you named, as far as the setup shows it: the user, someone else whose
+   releases the user installs, or the user on behalf of others too. That
+   shapes how a change can reach it (step 5).
 
 4. **Evaluate** each candidate on:
    - **Difference it makes**: does it let the agent *do* something (a tool,
@@ -117,7 +120,10 @@ limits when a source or part of it could not be read.
 5. **Decide**, one per candidate:
    - **ADOPT**: install or add as-is.
    - **MERGE**: take one idea or line into an existing skill, instruction,
-     or doc; do not install the candidate.
+     or doc; do not install the candidate. Who maintains the target shapes
+     the route: an edit to the user's own source, a layer of the user's own
+     over a source maintained elsewhere, or a proposal to its maintainer.
+     Recommend the one that suits this setup and say why.
    - **CONDITIONAL**: keep on demand for a named task only.
    - **PILOT**: try on one real project for a set period, with a named
      before/after measure, an end date, and what counts as success or
@@ -129,7 +135,8 @@ limits when a source or part of it could not be read.
 
 6. **Report and stop.** Give the source, checked facts and unverified claims,
    overlap with the setup, one decision per candidate (none for a candidate
-   step 1 could not read), and the concrete files or installations proposed. Name any open question or test cost. Nothing is
+   step 1 could not read), and the concrete files or installations proposed,
+   with the route each MERGE takes. Name any open question or test cost. Nothing is
    written (review record, the target skill or instruction, configuration,
    installs) until the user approves the named items. A go-ahead is explicit
    ("go ahead", "apply 1 only"). A follow-up question, a comment, or "bring
@@ -151,7 +158,9 @@ limits when a source or part of it could not be read.
      contribution guide), otherwise by the host's standard install method,
      and update what the change makes stale (an inventory or catalog, setup
      notes).
-   - A MERGE edits the target skill or instruction directly, following that
-     file's conventions (version field, eval scenario) when it has them.
+   - A MERGE takes the approved route. An edit follows the target file's
+     conventions (version field, eval scenario) when it has them. A proposal
+     to another maintainer follows that project's contribution practice,
+     and the user decides whether and when it is sent.
    - Run the setup's own checks and any dry run it offers.
    Commit only when asked; never push without explicit go-ahead.
