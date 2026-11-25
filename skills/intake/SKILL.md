@@ -97,6 +97,12 @@ limits when a source or part of it could not be read.
    - **Overhead**: description or session-start tokens, hooks (especially
      match-all matchers or per-prompt injection), runtimes and daemons, paid
      APIs or keys, per-machine setup, the operating systems the user runs.
+   - **Upkeep**: who keeps it working as models, hosts, and needs change.
+     Adopting leaves that to the candidate's maintainers, so their activity
+     and direction count; a merged or forked copy is the user's to keep.
+     When it overlaps something the user maintains, weigh whether it could
+     take over that work, or whether contributing to one side serves
+     better than keeping both.
    - **Risk**: data sent off the machine, telemetry, writes outside its own
      folder (user-level hooks, repository files), conflicts with the user's
      instructions.

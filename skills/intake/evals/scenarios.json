@@ -186,5 +186,18 @@
       "If it proposes a MERGE, weighs how the change would reach that skill (for example a layer in the user's own instructions, a proposal to its maintainer, or a local edit and what the next update would do to it) and says why it recommends one",
       "Does not edit the installed skill, and stops for the user's go-ahead before writing or sending anything"
     ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "Is 'skill-sync' worth adopting? Its README, which I pasted from the repo, says one config file installs skills for Claude Code and Codex, it has two maintainers, and the last release was three weeks ago. It does much of what the install scripts I wrote and maintain for my own setup do.",
+    "files": [],
+    "expected_behavior": [
+      "Compares the candidate with the user's own install scripts in who would keep each working from now on, not only feature by feature",
+      "Takes the candidate's maintainers and release activity into account, and marks them claimed because they come only from the pasted README",
+      "Weighs adopting it and retiring the scripts, contributing to one side, or keeping both, and explains the choice",
+      "Says the decision rests on the user's description and stops for the user's go-ahead before writing any file"
+    ]
   }
 ]
