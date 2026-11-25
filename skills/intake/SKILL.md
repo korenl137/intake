@@ -128,9 +128,9 @@ limits when a source or part of it could not be read.
    - **ADOPT**: install or add as-is.
    - **MERGE**: take one idea or line into an existing skill, instruction,
      or doc without installing the candidate. Choose the route by who
-     maintains the target and who should receive the change. When the
-     target is shared, keep personal rules in the user's own instructions,
-     even if the user maintains the shared target. For a change meant for
+     maintains the target and who should receive the change. When others
+     use the target too, keep personal rules in the user's own instructions,
+     even if the user maintains it. For a change meant for
      the target's users, edit its source if the user maintains it, or
      propose it to its maintainer. Explain why the recommended route fits.
    - **CONDITIONAL**: keep on demand for a named task only.
