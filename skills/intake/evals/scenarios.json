@@ -179,24 +179,36 @@
     "skills": [
       "intake"
     ],
-    "query": "Our intake review settled on MERGE for a check that compares the PR description with the diff. I install pr-review from someone else's GitHub repo and update it with git pull. I want this check only in my own reviews. Where should it go?",
+    "query": "Intake: a blog post says a review skill should also check the PR description against the diff, not only the code. My setup has a 'pr-review' skill that I install from someone else's GitHub repository and update with git pull. I'd want this check only in my own reviews.",
     "files": [],
     "expected_behavior": [
-      "Recommends putting the check in the user's own review instructions",
-      "Explains how that placement limits the change to the user's reviews and lets the upstream skill update independently",
-      "Treats the question as a request for a recommendation and stops before writing or sending anything"
+      "Notes that pr-review is maintained by someone else and the user only installs its releases",
+      "Recommends a route that keeps the check in the user's own instructions rather than an edit to the installed skill, and explains that it limits the check to the user's reviews and leaves pr-review's updates unaffected",
+      "Stops for the user's go-ahead before writing anything"
     ]
   },
   {
     "skills": [
       "intake"
     ],
-    "query": "The intake report recommends MERGE for my personal PR checklist. I maintain the review skill our whole team uses, and I want this checklist only for my own reviews. Where should I put it?",
+    "query": "Intake: a colleague's PR checklist (pasted: check migrations are reversible, check feature flags have an owner, check logs carry no personal data). I maintain the review skill our whole team uses, and I'd want this checklist only in my own reviews.",
     "files": [],
     "expected_behavior": [
-      "Recommends keeping the checklist in the user's personal review instructions",
-      "Explains that editing the shared skill would change other team members' reviews even though the user maintains it",
-      "Stops after recommending a route and awaits approval before editing"
+      "Names the team review skill as the existing overlap and notes that the user maintains it for others",
+      "Recommends keeping the checklist in the user's personal instructions, and explains that editing the team skill would change teammates' reviews even though the user maintains it",
+      "Stops for the user's go-ahead before writing anything"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "Intake: a blog post shows that PR review skills miss changes to generated files unless told to diff them separately. My setup has a 'pr-review' skill that I install from someone else's GitHub repository and update with git pull. I think everyone who uses pr-review would want this.",
+    "files": [],
+    "expected_behavior": [
+      "Notes that pr-review is maintained by someone else and the user only installs its releases",
+      "Recommends proposing the change to pr-review's maintainer, such as an issue or pull request, rather than editing the installed copy, and may suggest a personal layer until it lands",
+      "Offers to draft the proposal, leaves sending it to the user, and stops for the user's go-ahead before writing or sending anything"
     ]
   },
   {
@@ -208,7 +220,7 @@
     "expected_behavior": [
       "Recognizes lower upkeep as a sufficient benefit for ADOPT at feature parity if supported and risk and overhead are acceptable",
       "Compares the work of patching both scripts with switching and maintaining the config, and labels maintainer and release details as claimed unless independently checked",
-      "Weighs adopting it and retiring the scripts, contributing to one side, or keeping both, and explains the choice",
+      "Weighs adopting it and retiring the scripts against keeping both, and explains the choice; contributing to one side needs to come up only where it is a live option",
       "Says the decision rests on the user's description and stops for the user's go-ahead before writing any file"
     ]
   }
