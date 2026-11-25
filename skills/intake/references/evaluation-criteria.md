@@ -8,7 +8,7 @@ the current sources before relying on a number.
 
 | Type | Passes when | Cost to establish |
 |---|---|---|
-| Functional: a tool, script, data source or real workflow | It does something the setup cannot do yet, and risk and overhead are acceptable. | Reading the code and its install steps. |
+| Functional: a tool, script, data source or real workflow | It adds a capability or reduces the user's upkeep for an equivalent capability. Both routes require acceptable risk and overhead. | Read the code and install steps. For a replacement, compare the work retired with the work of switching and keeping it running. |
 | Instruction only: persona, process manual, rules, prompt pack | All three conditions below hold. | Reading plus a comparison or pilot. |
 | Mixed | Judge the functional part by its row and the instruction part by its row; take the part that passes. | Both. |
 

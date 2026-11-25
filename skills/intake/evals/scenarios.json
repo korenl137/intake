@@ -179,23 +179,35 @@
     "skills": [
       "intake"
     ],
-    "query": "Intake: a blog post says a review skill should check the PR description against the diff, not only the code. My setup has a 'pr-review' skill that I installed from someone else's GitHub repository and update with git pull; I don't maintain it.",
+    "query": "Our intake review settled on MERGE for a check that compares the PR description with the diff. I install pr-review from someone else's GitHub repo and update it with git pull. I want this check only in my own reviews. Where should it go?",
     "files": [],
     "expected_behavior": [
-      "Notes that the existing pr-review skill is maintained by someone else and the user only installs its releases",
-      "If it proposes a MERGE, weighs how the change would reach that skill (for example a layer in the user's own instructions, a proposal to its maintainer, or a local edit and what the next update would do to it) and says why it recommends one",
-      "Does not edit the installed skill, and stops for the user's go-ahead before writing or sending anything"
+      "Recommends putting the check in the user's own review instructions",
+      "Explains how that placement limits the change to the user's reviews and lets the upstream skill update independently",
+      "Treats the question as a request for a recommendation and stops before writing or sending anything"
     ]
   },
   {
     "skills": [
       "intake"
     ],
-    "query": "Is 'skill-sync' worth adopting? Its README, which I pasted from the repo, says one config file installs skills for Claude Code and Codex, it has two maintainers, and the last release was three weeks ago. It does much of what the install scripts I wrote and maintain for my own setup do.",
+    "query": "The intake report recommends MERGE for my personal PR checklist. I maintain the review skill our whole team uses, and I want this checklist only for my own reviews. Where should I put it?",
     "files": [],
     "expected_behavior": [
-      "Compares the candidate with the user's own install scripts in who would keep each working from now on, not only feature by feature",
-      "Takes the candidate's maintainers and release activity into account, and marks them claimed because they come only from the pasted README",
+      "Recommends keeping the checklist in the user's personal review instructions",
+      "Explains that editing the shared skill would change other team members' reviews even though the user maintains it",
+      "Stops after recommending a route and awaits approval before editing"
+    ]
+  },
+  {
+    "skills": [
+      "intake"
+    ],
+    "query": "Is 'skill-sync' worth adopting? Its README says one config file installs skills for Claude Code and Codex, it has two maintainers, and the last release was three weeks ago. I tried it on both hosts: it covers exactly what my scripts do. I currently patch both scripts whenever a host changes; with skill-sync I'd just maintain the config.",
+    "files": [],
+    "expected_behavior": [
+      "Recognizes lower upkeep as a sufficient benefit for ADOPT at feature parity if supported and risk and overhead are acceptable",
+      "Compares the work of patching both scripts with switching and maintaining the config, and labels maintainer and release details as claimed unless independently checked",
       "Weighs adopting it and retiring the scripts, contributing to one side, or keeping both, and explains the choice",
       "Says the decision rests on the user's description and stops for the user's go-ahead before writing any file"
     ]

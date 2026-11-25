@@ -22,10 +22,10 @@ metadata:
 - Flow
 
 Decide whether an outside source makes the user's agent setup better, and
-bring in only the part that does. A clearly prompted current model often
-matches a public skill, so a candidate has to make a difference the setup
-does not already give: a capability, or for instructions alone, evidence
-that they change outcomes
+bring in only the part that does. A functional candidate can add a
+capability or reduce the work of maintaining an existing one. A clearly
+prompted current model often matches a public skill, so instruction-only
+candidates need evidence that they change outcomes
 ([evaluation-criteria.md](references/evaluation-criteria.md)).
 
 **The setup** is whatever configures the user's agents in scope: global and
@@ -98,11 +98,12 @@ limits when a source or part of it could not be read.
      match-all matchers or per-prompt injection), runtimes and daemons, paid
      APIs or keys, per-machine setup, the operating systems the user runs.
    - **Upkeep**: who keeps it working as models, hosts, and needs change.
-     Adopting leaves that to the candidate's maintainers, so their activity
-     and direction count; a merged or forked copy is the user's to keep.
-     When it overlaps something the user maintains, weigh whether it could
-     take over that work, or whether contributing to one side serves
-     better than keeping both.
+     At feature parity, lower upkeep can justify ADOPT for a functional
+     candidate. A merged or forked copy still needs a maintainer. Identify
+     what the user could retire, what work would remain after switching,
+     and what evidence supports the saving. Weigh the maintainers'
+     activity and direction, and whether contributing to one side would
+     serve the user better.
    - **Risk**: data sent off the machine, telemetry, writes outside its own
      folder (user-level hooks, repository files), conflicts with the user's
      instructions.
@@ -126,10 +127,12 @@ limits when a source or part of it could not be read.
 5. **Decide**, one per candidate:
    - **ADOPT**: install or add as-is.
    - **MERGE**: take one idea or line into an existing skill, instruction,
-     or doc; do not install the candidate. Who maintains the target shapes
-     the route: an edit to the user's own source, a layer of the user's own
-     over a source maintained elsewhere, or a proposal to its maintainer.
-     Recommend the one that suits this setup and say why.
+     or doc without installing the candidate. Choose the route by who
+     maintains the target and who should receive the change. When the
+     target is shared, keep personal rules in the user's own instructions,
+     even if the user maintains the shared target. For a change meant for
+     the target's users, edit its source if the user maintains it, or
+     propose it to its maintainer. Explain why the recommended route fits.
    - **CONDITIONAL**: keep on demand for a named task only.
    - **PILOT**: try on one real project for a set period, with a named
      before/after measure, an end date, and what counts as success or
