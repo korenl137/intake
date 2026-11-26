@@ -10,7 +10,7 @@ description: >
   whether something is worth adding to their agent setup. Triggers include
   "intake", "evaluate this for my setup", "is this worth adopting".
 metadata:
-  version: "1.3.3"
+  version: "1.4.0"
 ---
 
 # Intake
@@ -22,10 +22,10 @@ metadata:
 - Flow
 
 Decide whether an outside source makes the user's agent setup better, and
-bring in only the part that does. A clearly prompted current model often
-matches a public skill, so a candidate has to make a difference the setup
-does not already give: a capability, or for instructions alone, evidence
-that they change outcomes
+bring in only the part that does. A functional candidate can add a
+capability or reduce the work of maintaining an existing one. A clearly
+prompted current model often matches a public skill, so instruction-only
+candidates need evidence that they change outcomes
 ([evaluation-criteria.md](references/evaluation-criteria.md)).
 
 **The setup** is whatever configures the user's agents in scope: global and
@@ -82,7 +82,10 @@ limits when a source or part of it could not be read.
    [references/setup-locations.md](references/setup-locations.md) lists
    the usual places), then name the existing instruction, skill, plugin, or built-in that
    covers the same job, and what the candidate adds beyond it. "Nothing
-   covers this" needs that inventory as evidence.
+   covers this" needs that inventory as evidence. Note who maintains what
+   you named, as far as the setup shows it: the user, someone else whose
+   releases the user installs, or the user on behalf of others too. That
+   shapes how a change can reach it (step 5).
 
 4. **Evaluate** each candidate on:
    - **Difference it makes**: does it let the agent *do* something (a tool,
@@ -94,6 +97,13 @@ limits when a source or part of it could not be read.
    - **Overhead**: description or session-start tokens, hooks (especially
      match-all matchers or per-prompt injection), runtimes and daemons, paid
      APIs or keys, per-machine setup, the operating systems the user runs.
+   - **Upkeep**: who keeps it working as models, hosts, and needs change.
+     At feature parity, lower upkeep can justify ADOPT for a functional
+     candidate. A merged or forked copy still needs a maintainer. Identify
+     what the user could retire, what work would remain after switching,
+     and what evidence supports the saving. Weigh the maintainers'
+     activity and direction, and whether contributing to one side would
+     serve the user better.
    - **Risk**: data sent off the machine, telemetry, writes outside its own
      folder (user-level hooks, repository files), conflicts with the user's
      instructions.
@@ -117,7 +127,12 @@ limits when a source or part of it could not be read.
 5. **Decide**, one per candidate:
    - **ADOPT**: install or add as-is.
    - **MERGE**: take one idea or line into an existing skill, instruction,
-     or doc; do not install the candidate.
+     or doc without installing the candidate. Choose the route by who
+     maintains the target and who should receive the change. When others
+     use the target too, keep personal rules in the user's own instructions,
+     even if the user maintains it. For a change meant for
+     the target's users, edit its source if the user maintains it, or
+     propose it to its maintainer. Explain why the recommended route fits.
    - **CONDITIONAL**: keep on demand for a named task only.
    - **PILOT**: try on one real project for a set period, with a named
      before/after measure, an end date, and what counts as success or
@@ -129,7 +144,8 @@ limits when a source or part of it could not be read.
 
 6. **Report and stop.** Give the source, checked facts and unverified claims,
    overlap with the setup, one decision per candidate (none for a candidate
-   step 1 could not read), and the concrete files or installations proposed. Name any open question or test cost. Nothing is
+   step 1 could not read), and the concrete files or installations proposed,
+   with the route each MERGE takes. Name any open question or test cost. Nothing is
    written (review record, the target skill or instruction, configuration,
    installs) until the user approves the named items. A go-ahead is explicit
    ("go ahead", "apply 1 only"). A follow-up question, a comment, or "bring
@@ -151,7 +167,9 @@ limits when a source or part of it could not be read.
      contribution guide), otherwise by the host's standard install method,
      and update what the change makes stale (an inventory or catalog, setup
      notes).
-   - A MERGE edits the target skill or instruction directly, following that
-     file's conventions (version field, eval scenario) when it has them.
+   - A MERGE takes the approved route. An edit follows the target file's
+     conventions (version field, eval scenario) when it has them. A proposal
+     to another maintainer follows that project's contribution practice,
+     and the user decides whether and when it is sent.
    - Run the setup's own checks and any dry run it offers.
    Commit only when asked; never push without explicit go-ahead.

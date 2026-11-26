@@ -32,7 +32,9 @@ Report a Tip | Covered by | Evidence | Verdict table, where Evidence is
 **covered-improvable** practices; for improvable ones name the file and line to
 change, the kind of improvement, and the evidence from the setup. A change that
 cannot be named that precisely stays covered-equal. A MERGE for a tip whose
-evidence is only claimed says so. A tip merged into an always-loaded file
+evidence is only claimed says so. Each tip MERGE still takes a route that fits
+who maintains its target, as step 5 of [SKILL.md](../SKILL.md#flow) describes,
+and the report names it. A tip merged into an always-loaded file
 (global instructions, hooks, session-start text) needs the evidence that
 [evaluation-criteria.md](evaluation-criteria.md) asks for always-loaded
 candidates, or becomes a PILOT or CONDITIONAL instead. Skip the other
