@@ -11,7 +11,7 @@ gives one decision per candidate:
 | Decision | Meaning |
 |---|---|
 | ADOPT | Install or add as-is |
-| MERGE | Take one idea into an existing skill or instruction; do not install |
+| MERGE | Take one idea into an existing skill or instruction, by a route that fits who maintains it ([step 5](skills/intake/SKILL.md#flow)); do not install |
 | CONDITIONAL | Keep on demand for a named task |
 | PILOT | Try on one project for a set period with a before/after measure |
 | SKIP | Record why, and when it would be worth revisiting |
