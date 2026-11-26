@@ -10,7 +10,7 @@ description: >
   whether something is worth adding to their agent setup. Triggers include
   "intake", "evaluate this for my setup", "is this worth adopting".
 metadata:
-  version: "1.3.3"
+  version: "1.4.0"
 ---
 
 # Intake
